@@ -2,7 +2,7 @@
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>softtek</groupId>
 	<artifactId>sofftek</artifactId>
-	<version>5</version>
+	<version>10</version>
 	<packaging>war</packaging>
 
 	<dependencies>
@@ -25,7 +25,7 @@
 		<dependency>
 			<groupId>org.hibernate</groupId>
 			<artifactId>hibernate-entitymanager</artifactId>
-			<version>5.6.5.Final</version>
+			<version>5.6.7.Final</version>
 		</dependency>
 
 		<!-- https://mvnrepository.com/artifact/com.h2database/h2 

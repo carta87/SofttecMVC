@@ -14,23 +14,34 @@ public class Estudiantes extends Usuarios implements Serializable {
 	private static final long serialVersionUID = 1L;
 	
 	@Id
+	private String id;
+	
 	private Integer codigo;
 	@Column(name= "idgrupo")
 	private Integer grupo;
-
-
-	public Estudiantes(String id, String nombre, String pasword, Integer codigo, Integer grupo) {
-		setId(id);
-		setNombre(nombre);
-		setPassword(pasword);
-		this.codigo = codigo;
-		this.grupo = grupo;
-	}
 
 	public Estudiantes() {
 		
 	}
 	
+	public Estudiantes(String id, String nombre, String pasword, Integer codigo, Integer grupo) {
+		setNombre(nombre);
+		setPassword(pasword);
+		this.id = id;
+		this.codigo = codigo;
+		this.grupo = grupo;
+	}
+
+
+	
+
+	public String getId() {
+		return id;
+	}
+
+	public void setId(String id) {
+		this.id = id;
+	}
 
 	public Integer getCodigo() {
 		return codigo;
@@ -47,7 +58,7 @@ public class Estudiantes extends Usuarios implements Serializable {
 
 	@Override
 	public String toString() {
-		return "Estudiantes [codigo=" + codigo + ", grupo=" + grupo + "]";
+		return "Estudiantes [id=" + id + " codigo=" + codigo + ", grupo=" + grupo + "]";
 	}
 
 

@@ -5,15 +5,24 @@ import java.util.List;
 
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
+import javax.persistence.Persistence;
 import javax.persistence.PersistenceContext;
 
 import Entities.Estudiantes;
 
 public class FachadaPersistenciaEstudiante implements FachadaPersistenciaEstudianteLocal {
 	
-	@PersistenceContext(unitName = "Persistencia")
+	//@PersistenceContext(unitName = "Persistencia")
 	
-	private EntityManager manager;
+	private static EntityManager manager;
+	private static EntityManagerFactory emf;
+	
+	public static EntityManagerFactory getEntityManagerFactory() {
+		if (emf==null) {
+			emf=Persistence.createEntityManagerFactory("Persistencia");
+		}
+		return emf;				
+	}
 
 	@Override
 	public void create(Estudiantes estudiante) {
