@@ -21,7 +21,7 @@ public class EstudianteBean  {
 	private static final long serialVersionUID = 1L;
 	
 	boolean flag = false;
-	List<Estudiantes> listRecover = new ArrayList<>();
+	private static List<Estudiantes> listRecover = new ArrayList<>();
 	/*public EstudianteBean(FachadaPersistenciaEstudianteLocal fPEL) {
 		this.fachadaPersistenciaEstudiante =fPEL;
 	}*/

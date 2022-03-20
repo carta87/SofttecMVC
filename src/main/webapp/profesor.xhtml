@@ -13,8 +13,7 @@
 	</h:head>
 	<h:body>
 		<header>
-		<h1>En esta Solucion padras hacer un Crud para editar los
-			registros de una tabla la cual se encuentra en la DB</h1>
+		<h1>Estas en profesor</h1>
 		</header>
 		<h:form>
 			<table>
@@ -49,9 +48,6 @@
 			<br />
 			<h:commandButton value="mostar14"
 				actionListener="#{estudianteBean.consultarEstudiantes()}"/>
-				
-				<h:commandButton value="ir a profesor"
-				actionListener="/profesor"/>
 			<br />
 			<h:dataTable value="#{estudianteBean.listRecover}" var="students" rendered="#{estudianteBean.listRecover.size()>0}">
 				<h:column>
