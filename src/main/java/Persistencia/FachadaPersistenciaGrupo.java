@@ -1,3 +1,4 @@
+/*
 package Persistencia;
 
 import java.util.List;
@@ -49,3 +50,4 @@ public class FachadaPersistenciaGrupo implements FachadaPersistenciaGrupoLocal {
 	
 
 }
+*/

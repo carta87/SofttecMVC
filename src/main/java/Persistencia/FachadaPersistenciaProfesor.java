@@ -1,3 +1,4 @@
+/*
 package Persistencia;
 
 import java.util.List;
@@ -47,3 +48,4 @@ public class FachadaPersistenciaProfesor implements FachadaPersistenciaProfesorL
 	}
 
 }
+*/

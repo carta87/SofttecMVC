@@ -2,15 +2,15 @@ package Persistencia;
 
 import java.util.List;
 
-import Entities.Estudiante;
+import Entities.Estudiantes;
 
 public interface FachadaPersistenciaEstudianteLocal {
 	
-	void create(Estudiante estudiante);
-	void edit(Estudiante estudiante);
+	void create(Estudiantes estudiante);
+	void edit(Estudiantes estudiante);
 	void find(Object object);
-	List<Estudiante> findAll();
-	Estudiante findByEstudiante(String string);
-	void remove(Estudiante estudiante); 
+	List<Estudiantes> findAll();
+	Estudiantes findByEstudiante(String string);
+	void remove(Estudiantes estudiante); 
 
 }

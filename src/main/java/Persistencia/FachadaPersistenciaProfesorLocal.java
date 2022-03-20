@@ -1,3 +1,4 @@
+/*
 package Persistencia;
 
 import java.util.List;
@@ -12,3 +13,4 @@ public interface FachadaPersistenciaProfesorLocal {
 	Profesor findByProfesor(String string);
 	void remove(Profesor profesor); 
 }
+*/

@@ -7,6 +7,7 @@
 	version="2.0" xmlns="http://java.sun.com/xml/ns/persistence">
 
 	<persistence-unit name="Persistencia">
+	<provider>org.hibernate.jpa.HibernatePersistenceProvider</provider>
 	
 	<class>Entities.Estudiantes</class>
 		<properties>

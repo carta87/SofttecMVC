@@ -1,3 +1,4 @@
+/*
 package Persistencia;
 
 import java.util.List;
@@ -14,3 +15,4 @@ public interface FachadaPersistenciaGrupoLocal {
 	void remove(Grupo grupo); 
 
 }
+*/

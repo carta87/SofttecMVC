@@ -1,10 +1,19 @@
 package Entities;
 
-public class Usuario {
+
+
+import javax.persistence.Column;
+
+
+public class Usuarios   {
+	
 	
 	private String id;
+	@Column(name = "nombre")
 	private String nombre;
+	@Column(name = "password")
 	private String password;
+	
 	
 	public String getId() {
 		return id;

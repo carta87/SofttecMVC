@@ -1,23 +1,29 @@
 package Persistencia;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import javax.persistence.EntityManager;
+import javax.persistence.EntityManagerFactory;
+import javax.persistence.PersistenceContext;
 
-import Entities.Estudiante;
+import Entities.Estudiantes;
 
 public class FachadaPersistenciaEstudiante implements FachadaPersistenciaEstudianteLocal {
 	
-	private EntityManager em;
+	@PersistenceContext(unitName = "Persistencia")
+	
+	private EntityManager manager;
 
 	@Override
-	public void create(Estudiante estudiante) {
-		// TODO Auto-generated method stub
+	public void create(Estudiantes estudiante) {
+		
+		
 		
 	}
 
 	@Override
-	public void edit(Estudiante estudiante) {
+	public void edit(Estudiantes estudiante) {
 		// TODO Auto-generated method stub
 		
 	}
@@ -28,21 +34,38 @@ public class FachadaPersistenciaEstudiante implements FachadaPersistenciaEstudia
 		
 	}
 
+	@SuppressWarnings("unchecked")
 	@Override
-	public List<Estudiante> findAll() {
+	public List<Estudiantes> findAll() {
+		List<Estudiantes> estudiantes = (List<Estudiantes>) manager.createQuery("from Estudiantes").getResultList();
+		return estudiantes;
+	}
+
+	@Override
+	public Estudiantes findByEstudiante(String string) {
 		// TODO Auto-generated method stub
 		return null;
 	}
 
 	@Override
-	public Estudiante findByEstudiante(String string) {
+	public void remove(Estudiantes estudiante) {
 		// TODO Auto-generated method stub
-		return null;
+		
 	}
-
-	@Override
-	public void remove(Estudiante estudiante) {
-		// TODO Auto-generated method stub
+	
+	
+	public static void main(String[] args) {
+		
+		FachadaPersistenciaEstudiante fpe = new FachadaPersistenciaEstudiante();
+		
+		List<Estudiantes> listEstudiantes = new ArrayList<>();
+		System.out.println("sdasdgagf");
+		
+		listEstudiantes= fpe.findAll();
+		
+		for (Estudiantes estudiantes : listEstudiantes) {
+			System.out.println(estudiantes);
+		}
 		
 	}
 

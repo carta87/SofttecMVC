@@ -1,3 +1,4 @@
+/*
 package Entities;
 
 public class Profesor extends Usuario {
@@ -31,6 +32,6 @@ public class Profesor extends Usuario {
 	}
 	
 }
-
+*/
 
 
