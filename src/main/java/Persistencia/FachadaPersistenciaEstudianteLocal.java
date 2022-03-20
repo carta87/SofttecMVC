@@ -10,7 +10,7 @@ public interface FachadaPersistenciaEstudianteLocal {
 	void edit(Estudiantes estudiante);
 	void find(Object object);
 	List<Estudiantes> findAll();
-	Estudiantes findByEstudiante(String string);
+	Estudiantes findByIdEstudiante(String string);
 	void remove(Estudiantes estudiante); 
 
 }

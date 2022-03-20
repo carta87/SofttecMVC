@@ -43,10 +43,37 @@
 
 			<h:outputText value="#{estudianteBean.prueba}" />
 
-			
+			<br />
+			<h:outputText value="estudianteBean.listRecover.size()}" rendered="#{estudianteBean.flag}"/>
+		
+			<br />
+			<h:commandButton value="mostar11"
+				actionListener="#{estudianteBean.consultarEstudiantes()}"/>
+			<br />
+			<h:dataTable value="#{estudianteBean.listRecover}" var="students" rendered="#{estudianteBean.listRecover.size()>0}">
+				<h:column>
+					<f:facet name="header">
+						<h:outputText value="ID" />
+					</f:facet>
+					
+				</h:column>
+				<h:column>
+					<f:facet name="header">
+						<h:outputText value="CODIGO" />
+					</f:facet>
+					
+				</h:column>
+				<h:column>
+					<f:facet name="header">
+						<h:outputText value="GRUPO" />
+					</f:facet>
+				</h:column>
+				
+			</h:dataTable>
+
 		</h:form>
 
-		<p:button value="Submit" />
+
 	</h:body>
 </f:view>
 </html>

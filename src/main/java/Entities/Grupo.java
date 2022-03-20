@@ -3,11 +3,12 @@ package Entities;
 
 import java.util.List;
 
-public class Grupo {
+
+public class Grupo   {
 
 	private Integer id;
 	private String asignatura;
-	private List<Estudiante> estudiantes;
+	private List<Estudiantes> estudiantes;
 	private Profesor profesor;
 
 	public String getAsignatura() {
@@ -18,11 +19,11 @@ public class Grupo {
 		this.asignatura = asignatura;
 	}
 
-	public List<Estudiante> getEstudiantes() {
+	public List<Estudiantes> getEstudiantes() {
 		return estudiantes;
 	}
 
-	public void setEstudiantes(List<Estudiante> estudiantes) {
+	public void setEstudiantes(List<Estudiantes> estudiantes) {
 		this.estudiantes = estudiantes;
 	}
 
@@ -43,4 +44,5 @@ public class Grupo {
 	}
 
 }
+
 */

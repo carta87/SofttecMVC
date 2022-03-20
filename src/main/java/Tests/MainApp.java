@@ -99,7 +99,7 @@ public class MainApp {
 					System.out.println("Estudiante actualizado..");
 					System.out.println();
 				} else { //no lo encontro
-					System.out.println();
+					
 					System.out.println("Estudiante no encontrado... Esta es la lista completa de estudiantes");
 					
 					
