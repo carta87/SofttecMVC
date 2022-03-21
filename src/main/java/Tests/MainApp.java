@@ -10,7 +10,7 @@ import Persistencia.FachadaPersistenciaEstudiante;
 
 public class MainApp {
 
-	@SuppressWarnings("unchecked")
+	@SuppressWarnings("unchecked") 
 	public static void main(String[] args) {
 
 		int opcion = 0;
@@ -135,5 +135,4 @@ public class MainApp {
 			}
 		}
 	}
-
 }

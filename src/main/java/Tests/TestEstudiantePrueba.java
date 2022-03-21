@@ -36,5 +36,4 @@ public class TestEstudiantePrueba {
 			System.out.println(estudiantes);
 		}
 	}
-
 }

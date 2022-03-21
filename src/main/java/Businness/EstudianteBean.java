@@ -18,8 +18,6 @@ import java.io.Serializable;
 @ApplicationScoped
 public class EstudianteBean  {
 	
-	private static final long serialVersionUID = 1L;
-	
 	boolean flag = false;
 	private static List<Estudiantes> listRecover = new ArrayList<>();
 	/*public EstudianteBean(FachadaPersistenciaEstudianteLocal fPEL) {
@@ -67,7 +65,7 @@ public class EstudianteBean  {
 		}
 		this.flag = true;
 		return this.listRecover;
-	}
+	} 
 	/*
 	public static void main(String[] args) {
 		

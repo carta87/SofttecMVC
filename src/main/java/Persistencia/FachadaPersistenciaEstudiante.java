@@ -14,11 +14,10 @@ import Entities.Estudiantes;
 
 public class FachadaPersistenciaEstudiante implements FachadaPersistenciaEstudianteLocal {
 	
-	//@PersistenceContext(unitName = "Persistencia")
-	
+	//@PersistenceContext(unitName = "Persistencia")	
 	private static EntityManagerFactory emf;
 	Estudiantes estudiantes;
-	
+	 
 	EntityManager entity = getEntityManagerFactory().createEntityManager();
 	
 	public static EntityManagerFactory getEntityManagerFactory() {
@@ -26,6 +25,12 @@ public class FachadaPersistenciaEstudiante implements FachadaPersistenciaEstudia
 			emf=Persistence.createEntityManagerFactory("Persistencia");
 		}
 		return emf;				
+	}
+	
+	public static void shutdown() {
+		if (emf!=null) {
+			emf.close();
+		}		
 	}
 
 	@Override
@@ -60,7 +65,10 @@ public class FachadaPersistenciaEstudiante implements FachadaPersistenciaEstudia
 	public List<Estudiantes> findAll() {
 		System.out.println("entra al findAll");
 		List<Estudiantes> estudiantesRecover= (List<Estudiantes> ) entity.createQuery("FROM Estudiantes").getResultList();
-		System.out.println("despues del findAll");
+		//List<Estudiantes> estudiantesRecover= (List<Estudiantes> ) entity.createQuery("select nombre, password, codigo, idgrupo \r\n"
+			//	+ "from usuarios u \r\n"
+		//		+ "inner join estudiantes e on u.id = e.id ").getResultList();
+		System.out.println("despues del findAll"); 
 		return estudiantesRecover;
 	}
 
@@ -79,7 +87,7 @@ public class FachadaPersistenciaEstudiante implements FachadaPersistenciaEstudia
 			System.out.println(estudiante.toString());
 			entity.getTransaction().begin();
 			entity.remove(estudianteRecover);
-			entity.getTransaction().commit();
+			entity.getTransaction().commit(); 
 			System.out.println("estudiante  eliminado...");
 		} else {
 			System.out.println("Estudiante no encontrado...");

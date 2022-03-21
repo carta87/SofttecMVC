@@ -51,7 +51,7 @@
 				actionListener="#{estudianteBean.consultarEstudiantes()}"/>
 				
 				<h:commandButton value="ir a profesor"
-				actionListener="/profesor"/>
+				action="/profesor"/>
 			<br />
 			<h:dataTable value="#{estudianteBean.listRecover}" var="students" rendered="#{estudianteBean.listRecover.size()>0}">
 				<h:column>
@@ -59,6 +59,18 @@
 						<h:outputText value="ID" />
 					</f:facet>
 					<h:outputLabel value="#{students.id}" />
+				</h:column>
+				<h:column>
+					<f:facet name="header">
+						<h:outputText value="Nombre" />
+					</f:facet>
+					<h:outputLabel value="#{students.nombre}" />
+				</h:column>
+				<h:column>
+					<f:facet name="header">
+						<h:outputText value="Password" />
+					</f:facet>
+					<h:outputLabel value="#{students.password}" />
 				</h:column>
 				<h:column>
 					<f:facet name="header">

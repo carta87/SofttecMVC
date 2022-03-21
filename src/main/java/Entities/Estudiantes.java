@@ -15,7 +15,6 @@ public class Estudiantes extends Usuarios implements Serializable {
 	
     @Id
 	private String id;
-	
 	private Integer codigo;
 	@Column(name= "idgrupo")
 	private Integer grupo;
@@ -31,9 +30,6 @@ public class Estudiantes extends Usuarios implements Serializable {
 		this.codigo = codigo;
 		this.grupo = grupo;
 	}
-
-
-	
 
 	public String getId() {
 		return id;

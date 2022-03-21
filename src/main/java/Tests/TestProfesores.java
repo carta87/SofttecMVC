@@ -7,8 +7,9 @@ import javax.persistence.EntityManagerFactory;
 import javax.persistence.Persistence;
 
 import Entities.Persona;
+import Entities.Profesores;
 
-public class TestPersona {
+public class TestProfesores {
 
 		private static EntityManager manager;
 		
@@ -19,8 +20,9 @@ public class TestPersona {
 			emf = Persistence.createEntityManagerFactory("Persistencia");
 			manager = emf.createEntityManager();
 			
-			List<Persona> personas = (List<Persona>) manager.createQuery("from Persona").getResultList();
+			List<Profesores> profesores = (List<Profesores>) manager.createQuery("from Profesores").getResultList();
 
-			System.out.println("En esta base de datos hay "+ personas.size()+ " Personas");
+			System.out.println("En esta base de datos hay "+ profesores.size()+ " Profesores");
 		}
+
 }

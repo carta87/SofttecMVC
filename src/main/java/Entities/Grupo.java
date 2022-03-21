@@ -1,15 +1,26 @@
 /*
 package Entities;
 
+import java.io.Serializable;
 import java.util.List;
 
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.Table;
 
-public class Grupo   {
-
+@Entity
+@Table(name = "Grupo")
+public class Grupo implements Serializable  {
+    @Id
 	private Integer id;
 	private String asignatura;
 	private List<Estudiantes> estudiantes;
 	private Profesor profesor;
+	
+	public Grupo() {
+		
+	}
+	
 
 	public String getAsignatura() {
 		return asignatura;
@@ -42,6 +53,14 @@ public class Grupo   {
 	public void setProfesor(Profesor profesor) {
 		this.profesor = profesor;
 	}
+
+
+	@Override
+	public String toString() {
+		return "Grupo [id=" + id + ", asignatura=" + asignatura + ", estudiantes=" + estudiantes + ", profesor="
+				+ profesor + "]";
+	}
+	
 
 }
 

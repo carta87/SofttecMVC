@@ -1,16 +1,15 @@
-/*
+
 package Persistencia;
 
 import java.util.List;
-import Entities.Profesor;
+import Entities.Profesores;
 
 public interface FachadaPersistenciaProfesorLocal {
 
-	void create(Profesor profesor);
-	void edit(Profesor profesor);
-	void find(Object object);
-	List<Profesor> findAll();
-	Profesor findByProfesor(String string);
-	void remove(Profesor profesor); 
+	void create(Profesores profesor);
+	void edit(Profesores profesor);
+	void find(Object object); //no implementado
+	List<Profesores> findAll();
+	Profesores findByIdProfesor(String idProfesor);
+	void remove(Profesores profesor); 
 }
-*/
