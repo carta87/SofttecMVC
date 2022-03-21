@@ -2,7 +2,7 @@
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>softtek</groupId>
 	<artifactId>sofftek</artifactId>
-	<version>22</version>
+	<version>23</version>
 	<packaging>war</packaging>
 
 	<dependencies>

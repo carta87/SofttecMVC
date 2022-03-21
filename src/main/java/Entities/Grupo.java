@@ -1,41 +1,48 @@
-/*
+
 package Entities;
 
 import java.io.Serializable;
 import java.util.List;
 
+import javax.persistence.CascadeType;
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
 @Entity
 @Table(name = "Grupo")
-public class Grupo implements Serializable  {
-    @Id
+public class Grupo implements Serializable {
+   
+	//@OneToOne(cascade = {CascadeType.ALL})
+	//@JoinColumn(name = "id")
+	//private List<Estudiantes> estudiantes;
+	//@OneToOne(cascade = {CascadeType.ALL})
+	//@JoinColumn(name = "id")
+	//@Column(name="idProfesor")
+	//private Profesores profesor;
+	
+	 @Id
 	private Integer id;
 	private String asignatura;
-	private List<Estudiantes> estudiantes;
-	private Profesor profesor;
+	@Column(name = "idestudiante")
+	private String idEstudiante;
+	@Column(name = "idprofesor")
+	private String idProfesor;
+	
 	
 	public Grupo() {
 		
 	}
 	
-
-	public String getAsignatura() {
-		return asignatura;
-	}
-
-	public void setAsignatura(String asignatura) {
+	public Grupo(Integer id, String asignatura, String idEstudiante, String idProfesor) {
+		super();
+		this.id = id;
 		this.asignatura = asignatura;
-	}
-
-	public List<Estudiantes> getEstudiantes() {
-		return estudiantes;
-	}
-
-	public void setEstudiantes(List<Estudiantes> estudiantes) {
-		this.estudiantes = estudiantes;
+		this.idEstudiante = idEstudiante;
+		this.idProfesor = idProfesor;
 	}
 
 	public Integer getId() {
@@ -46,22 +53,33 @@ public class Grupo implements Serializable  {
 		this.id = id;
 	}
 
-	public Profesor getProfesor() {
-		return profesor;
+	public String getAsignatura() {
+		return asignatura;
 	}
 
-	public void setProfesor(Profesor profesor) {
-		this.profesor = profesor;
+	public void setAsignatura(String asignatura) {
+		this.asignatura = asignatura;
 	}
 
+	public String getIdEstudiante() {
+		return idEstudiante;
+	}
+
+	public void setIdEstudiante(String idEstudiante) {
+		this.idEstudiante = idEstudiante;
+	}
+
+	public String getIdProfesor() {
+		return idProfesor;
+	}
+
+	public void setIdProfesor(String idProfesor) {
+		this.idProfesor = idProfesor;
+	}
 
 	@Override
 	public String toString() {
-		return "Grupo [id=" + id + ", asignatura=" + asignatura + ", estudiantes=" + estudiantes + ", profesor="
-				+ profesor + "]";
+		return "Grupo [id=" + id + ", asignatura=" + asignatura + ", idEstudiante=" + idEstudiante + ", idProfesor="
+				+ idProfesor + "]";
 	}
-	
-
 }
-
-*/

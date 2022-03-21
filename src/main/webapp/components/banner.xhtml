@@ -5,8 +5,15 @@
 	xmlns:ui="http://java.sun.com/jsf/facelets"
 	xmlns:p="http://primefaces.org/ui">
 
-<ui:composition template="/components/template/template.xhtml">
-
+<ui:composition>
+	<div class="card">
+		<h:form>
+			<p:breadCrumb>
+				<p:menuitem value="Inicio" action="/components/Views/Principal" />
+				<p:menuitem value="Estudiantes" action="/components/Views/Estudiantes" />
+				<p:menuitem value="Profesores" action="/components/Views/Profesores" />
+			</p:breadCrumb>
+		</h:form>
+	</div>
 </ui:composition>
-
 </html>

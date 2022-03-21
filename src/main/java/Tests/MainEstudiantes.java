@@ -8,7 +8,7 @@ import javax.persistence.Query;
 import Entities.Estudiantes;
 import Persistencia.FachadaPersistenciaEstudiante;
 
-public class MainApp {
+public class MainEstudiantes {
 
 	@SuppressWarnings("unchecked") 
 	public static void main(String[] args) {
