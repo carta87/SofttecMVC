@@ -8,7 +8,7 @@ import javax.persistence.Persistence;
 
 import Entities.Estudiantes;
 
-public class TestEstudiantePrueba {
+public class TestEstudiante {
 	
 	private static EntityManager manager;
 	
@@ -19,20 +19,15 @@ public class TestEstudiantePrueba {
 		emf = Persistence.createEntityManagerFactory("Persistencia");
 		manager = emf.createEntityManager();
 		
-		List<Estudiantes> estudiante = (List<Estudiantes>) manager.createQuery("from Estudiantes").getResultList();
-		//List<Integer> estudiante = (List<Integer>) manager.createQuery("select codigo from Estudiantes").getResultList();
-		
-		System.out.println("En esta base de datos hay "+ estudiante.size()+ " Personas");
-		
 		imprimir();
 	}
 	
 	@SuppressWarnings("unchecked")
 	private static void imprimir() {
-		List<Estudiantes> estudiante = (List<Estudiantes>) manager.createQuery("from Estudiantes").getResultList();
-		System.out.println("En esta base de datos hay "+ estudiante.size()+ " Personas");
+		List<Estudiantes> listEstudiante = (List<Estudiantes>) manager.createQuery("from Estudiantes").getResultList();
+		System.out.println("En esta base de datos hay "+ listEstudiante.size()+ " estudiantes");
 		
-		for (Estudiantes estudiantes : estudiante) {
+		for (Estudiantes estudiantes : listEstudiante) {
 			System.out.println(estudiantes);
 		}
 	}

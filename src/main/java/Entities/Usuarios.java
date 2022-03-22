@@ -2,22 +2,35 @@ package Entities;
 
 
 
+import java.io.Serializable;
+
 import javax.persistence.Column;
+import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.persistence.Inheritance;
+import javax.persistence.InheritanceType;
 import javax.persistence.MappedSuperclass;
 import javax.persistence.Table;
 
-
-public class Usuarios   {
-	
-	
+@Inheritance(strategy = InheritanceType.JOINED)
+@Entity
+@Table(name= "Usuarios")
+public class Usuarios implements Serializable { //  
+	@Id
 	private String id;
-	@Column(name = "nombre")
 	private String nombre;
-	@Column(name = "password")
 	private String password;
 	
+	public Usuarios() {
+		
+	}
 	
+	public Usuarios(String id, String nombre, String password) {
+		this.id = id;
+		this.nombre = nombre;
+		this.password = password;
+	}
+
 	public String getId() {
 		return id;
 	}
@@ -37,4 +50,8 @@ public class Usuarios   {
 		this.password = password;
 	}
 	
+	@Override
+	public String toString() {
+		return "Usuarios [id=" + id + ", nombre=" + nombre + ", password=" + password + "]";
+	}
 }

@@ -48,7 +48,7 @@ public class FachadaPersistenciaProfesor implements FachadaPersistenciaProfesorL
 		}
 	}
 
-	@SuppressWarnings("unchecked")
+
 	@Override
 	public void find(Object object) {
 		// TODO Auto-generated method stub

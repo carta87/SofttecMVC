@@ -11,8 +11,8 @@ import javax.persistence.Table;
 @Entity
 @Table(name = "Profesores")
 public class Profesores extends Usuarios implements Serializable{
-	@Id
-	private String id; 
+
+	
 	@Column(name= "idgrupo")
 	private Integer grupo;
 	private Integer nivel;
@@ -24,18 +24,12 @@ public class Profesores extends Usuarios implements Serializable{
 	public Profesores(String id, String nombre, String password, Integer grupo, Integer nivel) {
 		setNombre(nombre);
 		setPassword(nombre);
-		this.id =id;
+		
 		this.grupo = grupo;
 		this.nivel = nivel;
 	}
 
-	public String getId() {
-		return id;
-	}
-
-	public void setId(String id) {
-		this.id = id;
-	}
+	
 
 	public Integer getNivel() {
 		return nivel;
@@ -54,7 +48,7 @@ public class Profesores extends Usuarios implements Serializable{
 
 	@Override
 	public String toString() {
-		return "Profesores [id=" + id + ", grupo=" + grupo + ", nivel=" + nivel + "]";
+		return "Profesores [nombre = "+ super.getNombre()+ " password = "+super.getPassword() + " grupo=" + grupo + ", nivel=" + nivel + "]";
 	}
 
 

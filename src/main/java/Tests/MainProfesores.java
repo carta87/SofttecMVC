@@ -9,13 +9,14 @@ import Entities.Profesores;
 import Persistencia.FachadaPersistenciaEstudiante;
 
 public class MainProfesores {
-
+ 
 	@SuppressWarnings("unchecked")
 	public static void main(String[] args) {
 
 		int opcion = 0;
 		Scanner scanner = new Scanner(System.in);
 		Profesores profesores;
+		
 
 		//EntityManager entity = JPAUtil.getEntityManagerFactory().createEntityManager();
 		

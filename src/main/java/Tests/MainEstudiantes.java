@@ -51,7 +51,7 @@ public class MainEstudiantes {
 				entity.getTransaction().commit();
 				System.out.println("estudiante registrado..");
 				System.out.println();
-				break;
+				break; 
 
 			case 2:
 				System.out.println("Digite el id del estudiante a buscar:");

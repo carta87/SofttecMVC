@@ -24,8 +24,8 @@ public class Grupo implements Serializable {
 	//@Column(name="idProfesor")
 	//private Profesores profesor;
 	
-	 @Id
-	private Integer id;
+	@Id
+	private String id;
 	private String asignatura;
 	@Column(name = "idestudiante")
 	private String idEstudiante;
@@ -37,7 +37,7 @@ public class Grupo implements Serializable {
 		
 	}
 	
-	public Grupo(Integer id, String asignatura, String idEstudiante, String idProfesor) {
+	public Grupo(String id, String asignatura, String idEstudiante, String idProfesor) {
 		super();
 		this.id = id;
 		this.asignatura = asignatura;
@@ -45,11 +45,11 @@ public class Grupo implements Serializable {
 		this.idProfesor = idProfesor;
 	}
 
-	public Integer getId() {
+	public String getId() {
 		return id;
 	}
 
-	public void setId(Integer id) {
+	public void setId(String id) {
 		this.id = id;
 	}
 

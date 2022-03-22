@@ -22,39 +22,38 @@
 			<h:commandButton value="mostar20"
 				actionListener="#{profesorBean.consultarProfesores()}" />
 			<br />
-			<h:dataTable value="#{profesorBean.listRecover}" var="profesors"
-				rendered="#{profesorBean.listRecover.size()>0}">
-				<h:column>
-					<f:facet name="header">
-						<h:outputText value="ID" />
-					</f:facet>
-					<h:outputLabel value="#{profesors.id}" />
-				</h:column>
-				<h:column>
-						<f:facet name="header">
-							<h:outputText value="Nombre" />
-						</f:facet>
-						<h:outputLabel value="#{profesors.nombre}" />
-					</h:column>
-					<h:column>
-						<f:facet name="header">
-							<h:outputText value="Password" />
-						</f:facet>
-						<h:outputLabel value="#{profesors.password}" />
-					</h:column>
-				<h:column>
-					<f:facet name="header">
-						<h:outputText value="Nivel" />
-					</f:facet>
-					<h:outputLabel value="#{profesors.nivel}" />
-				</h:column>
-				<h:column>
-					<f:facet name="header">
-						<h:outputText value="GRUPO" />
-					</f:facet>
-					<h:outputLabel value="#{profesors.grupo}" />
-				</h:column>
-			</h:dataTable>
+			
+			
+			
+			<div class="card">
+
+				<p:dataTable value="#{profesorBean.listRecover}" var="profesors">
+					rendered="#{profesorBean.listRecover.size()>0}">
+					
+					<p:column headerText="ID">
+						<h:outputText value="#{profesors.id}" />
+					</p:column>
+					
+					<p:column headerText="NOMBRE">
+						<h:outputText value="#profesors.nombre}" />
+					</p:column>
+					
+					<p:column headerText="PASSWORD">
+						<h:outputText value="#profesors.password}" />
+					</p:column>
+					
+					<p:column headerText="NIVEL">
+						<h:outputText value="#{profesors.nivel}" />
+					</p:column>
+					
+					<p:column headerText="GRUPO">
+						<h:outputText value="#{profesors.grupo}" />
+					</p:column>
+	
+				</p:dataTable>
+
+			</div>
+			
 		</h:form>
 	</ui:define>
 </ui:composition>

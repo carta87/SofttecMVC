@@ -12,7 +12,7 @@ import Persistencia.FachadaPersistenciaProfesorLocal;
 import java.util.List;
 import java.util.ArrayList;
 
-@Named
+@Named  
 @ApplicationScoped
 public class ProfesorBean  {
 	

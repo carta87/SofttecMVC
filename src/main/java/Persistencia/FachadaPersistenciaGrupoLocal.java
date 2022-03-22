@@ -1,4 +1,4 @@
-/*
+
 package Persistencia;
 
 import java.util.List;
@@ -11,8 +11,7 @@ public interface FachadaPersistenciaGrupoLocal {
 	void edit(Grupo grupo);
 	void find(Object object);
 	List<Grupo > findAll();
-	Grupo findByGrupo(String string);
+	Grupo findIdByGrupo(String  idGrupo);
 	void remove(Grupo grupo); 
 
 }
-*/

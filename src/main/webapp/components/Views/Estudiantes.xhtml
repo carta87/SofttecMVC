@@ -9,10 +9,12 @@
 <ui:composition template="/components/template/template.xhtml">
 	<ui:param name="pageTitle" value="Estudiantes" />
 	<ui:define name="Estudiantes">
+
+
+
+
 		<h:form id="form">
 			<p>Esta es la pagina de estudiantes</p>
-
-
 
 			<h:outputText value="#{estudianteBean.prueba}" />
 
@@ -29,40 +31,34 @@
 
 			<div class="card">
 
-
-				<h:dataTable value="#{estudianteBean.listRecover}" var="students"
+				<p:dataTable value="#{estudianteBean.listRecover}" var="students">
 					rendered="#{estudianteBean.listRecover.size()>0}">
-					<h:column>
-						<f:facet name="header">
-							<h:outputText value="ID" />
-						</f:facet>
-						<h:outputLabel value="#{students.id}" />
-					</h:column>
-					<h:column>
-						<f:facet name="header">
-							<h:outputText value="Nombre" />
-						</f:facet>
-						<h:outputLabel value="#{students.nombre}" />
-					</h:column>
-					<h:column>
-						<f:facet name="header">
-							<h:outputText value="Password" />
-						</f:facet>
-						<h:outputLabel value="#{students.password}" />
-					</h:column>
-					<h:column>
-						<f:facet name="header">
-							<h:outputText value="CODIGO" />
-						</f:facet>
-						<h:outputLabel value="#{students.codigo}" />
-					</h:column>
-					<h:column>
-						<f:facet name="header">
-							<h:outputText value="GRUPO" />
-						</f:facet>
-						<h:outputLabel value="#{students.grupo}" />
-					</h:column>
-				</h:dataTable>
+					
+					<p:column headerText="ID">
+						<h:outputText value="#{students.id}" />
+					</p:column>
+					
+					<p:column headerText="NOMBRE">
+						<h:outputText value="#{students.nombre}" />
+					</p:column>
+					
+					<p:column headerText="PASSWORD">
+						<h:outputText value="#{students.password}" />
+					</p:column>
+					
+					<p:column headerText="CODIGO">
+						<h:outputText value="#{students.codigo}" />
+					</p:column>
+					
+					<p:column headerText="GRUPO">
+						<h:outputText value="#{students.grupo}" />
+					</p:column>
+					
+					<p:column headerText="Update">
+						<h:commandButton value="ir a profesor" actionListener="#{estudianteBean.eliminarEstudiante(students)}" />
+					</p:column>
+	
+				</p:dataTable>
 
 			</div>
 		</h:form>

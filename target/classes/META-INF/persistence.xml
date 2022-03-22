@@ -12,6 +12,7 @@
 	<class>Entities.Estudiantes</class>
 	<class>Entities.Profesores</class>
 	<class>Entities.Grupo</class>
+    <class>Entities.Usuarios</class>
 		<properties>
 			<property name="javax.persistence.jdbc.driver" value="org.postgresql.Driver" />
 			<property name="javax.persistence.jdbc.url" value="jdbc:postgresql://localhost:5433/softtek" />

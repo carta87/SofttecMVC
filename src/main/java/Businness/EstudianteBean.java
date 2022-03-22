@@ -1,18 +1,17 @@
 package Businness;
 
 import javax.faces.bean.ApplicationScoped;
-import javax.faces.bean.ManagedBean;
-import javax.faces.bean.RequestScoped;
+
 import javax.inject.Inject;
 import javax.inject.Named;
 
 import Entities.Estudiantes;
-import Persistencia.FachadaPersistenciaEstudiante;
+
 import Persistencia.FachadaPersistenciaEstudianteLocal;
 
 import java.util.List;
 import java.util.ArrayList;
-import java.io.Serializable;
+
 
 @Named
 @ApplicationScoped
@@ -33,7 +32,7 @@ public class EstudianteBean  {
 	}
 	*/
 	public String getPrueba() {
-		return prueba;
+		return prueba; 
 	}
 
 	public void setPrueba(String prueba) {
@@ -57,6 +56,7 @@ public class EstudianteBean  {
 	}
 
 	public List<Estudiantes> consultarEstudiantes(){
+		
 		System.out.println("por aca pasa");
 		this.listRecover = this.fachadaPersistenciaEstudianteLocal.findAll();
 		
@@ -66,6 +66,11 @@ public class EstudianteBean  {
 		this.flag = true;
 		return this.listRecover;
 	} 
+	
+	
+	public void eliminarEstudiante(Estudiantes estudiantes) {
+		this.fachadaPersistenciaEstudianteLocal.remove(estudiantes);;
+	}
 	/*
 	public static void main(String[] args) {
 		

@@ -11,6 +11,7 @@ import javax.transaction.Transactional;
 import javax.xml.bind.annotation.XmlTransient;
 
 import Entities.Estudiantes;
+import Entities.Usuarios;
 
 public class FachadaPersistenciaEstudiante implements FachadaPersistenciaEstudianteLocal {
 	
@@ -25,7 +26,7 @@ public class FachadaPersistenciaEstudiante implements FachadaPersistenciaEstudia
 			emf=Persistence.createEntityManagerFactory("Persistencia");
 		}
 		return emf;				
-	}
+	}  
 	
 	public static void shutdown() {
 		if (emf!=null) {
@@ -62,12 +63,9 @@ public class FachadaPersistenciaEstudiante implements FachadaPersistenciaEstudia
 
 	@SuppressWarnings("unchecked")
 	@Override
-	public List<Estudiantes> findAll() {
+	public List<Estudiantes> findAll() { 
 		System.out.println("entra al findAll");
 		List<Estudiantes> estudiantesRecover= (List<Estudiantes> ) entity.createQuery("FROM Estudiantes").getResultList();
-		//List<Estudiantes> estudiantesRecover= (List<Estudiantes> ) entity.createQuery("select nombre, password, codigo, idgrupo \r\n"
-			//	+ "from usuarios u \r\n"
-		//		+ "inner join estudiantes e on u.id = e.id ").getResultList();
 		System.out.println("despues del findAll"); 
 		return estudiantesRecover;
 	}
@@ -99,13 +97,14 @@ public class FachadaPersistenciaEstudiante implements FachadaPersistenciaEstudia
 		
 		 FachadaPersistenciaEstudiante uso = new FachadaPersistenciaEstudiante();
 		 
-		 Estudiantes esttudiante1 = new Estudiantes();
+		 Estudiantes estudiante1 = new Estudiantes();
 		// esttudiante1.setId("23");
 		 //esttudiante1.setCodigo(2999900);
 		 //esttudiante1.setGrupo(2);
 		 
-		 System.out.println(esttudiante1.toString());
+		 //System.out.println(esttudiante1.toString());
 		 
+		
 		//uso.create(esttudiante1);
 		
 		//uso.findByIdEstudiante("");
@@ -119,6 +118,7 @@ public class FachadaPersistenciaEstudiante implements FachadaPersistenciaEstudia
 			 System.out.println(e);
 			
 		}
+
 		 
 	
 		

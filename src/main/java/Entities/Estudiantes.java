@@ -1,6 +1,7 @@
 package Entities;
 
 import java.io.Serializable;
+import java.util.Objects;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -13,8 +14,7 @@ public class Estudiantes extends Usuarios implements Serializable {
 	
 	private static final long serialVersionUID = 1L;
 	
-    @Id
-	private String id;
+
 	private Integer codigo;
 	@Column(name= "idgrupo")
 	private Integer grupo;
@@ -26,18 +26,11 @@ public class Estudiantes extends Usuarios implements Serializable {
 	public Estudiantes(String id, String nombre, String pasword, Integer codigo, Integer grupo) {
 		setNombre(nombre);
 		setPassword(pasword);
-		this.id = id;
 		this.codigo = codigo;
 		this.grupo = grupo;
 	}
 
-	public String getId() {
-		return id;
-	}
 
-	public void setId(String id) {
-		this.id = id;
-	}
 
 	public Integer getCodigo() {
 		return codigo;
@@ -52,13 +45,37 @@ public class Estudiantes extends Usuarios implements Serializable {
 		this.grupo = grupo;
 	}
 
+
+
 	@Override
 	public String toString() {
-		return "Estudiantes [id=" + id + " codigo=" + codigo + ", grupo=" + grupo + "]";
+		return "Estudiantes [nombre ="+ super.getNombre()+ " password = "+super.getPassword() +" codigo=" + codigo + ", grupo=" + grupo + "]";
+	}
+/*
+	@Override
+	public int hashCode() {
+		return Objects.hash(codigo, grupo, id);
 	}
 
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		Estudiantes other = (Estudiantes) obj;
+		return Objects.equals(codigo, other.codigo) && Objects.equals(grupo, other.grupo)
+				&& Objects.equals(id, other.id);
+	}*/
 
-
+/*
+   public static void main(String[] args) {
+	   Estudiantes estudiantes = new Estudiantes();
+	   estudiantes.setNombre("juliana");
+	 System.out.println(estudiantes.getNombre());
+}*/
 	
 
 }

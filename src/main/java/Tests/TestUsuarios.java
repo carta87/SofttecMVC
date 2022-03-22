@@ -6,11 +6,11 @@ import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.Persistence;
 
-import Entities.Grupo;
 import Entities.Profesores;
+import Entities.Usuarios;
 
 
-public class TestGrupo {
+public class TestUsuarios {
 	private static EntityManager manager;
 	
 	private static EntityManagerFactory emf;
@@ -25,13 +25,12 @@ public class TestGrupo {
 	
 	@SuppressWarnings("unchecked")
 	private static void imprimir() {
-		List<Grupo> listGrupos = (List<Grupo>) manager.createQuery("from Grupo").getResultList();
-		System.out.println("En esta base de datos hay "+ listGrupos.size()+ " grupos");
+		List<Usuarios> listUsuarios = (List<Usuarios>) manager.createQuery("from Usuarios").getResultList();
+		System.out.println("En esta base de datos hay "+ listUsuarios.size()+ " usuarios");
 		
-		for (Grupo grupo : listGrupos) {
-			System.out.println(grupo);
+		for (Usuarios usuario : listUsuarios) {
+			System.out.println(usuario);
 		}
 	}
-
 
 }
