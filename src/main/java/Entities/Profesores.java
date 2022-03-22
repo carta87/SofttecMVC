@@ -1,18 +1,15 @@
-
 package Entities;
 
 import java.io.Serializable;
-
 import javax.persistence.Column;
 import javax.persistence.Entity;
-import javax.persistence.Id;
 import javax.persistence.Table;
 
 @Entity
 @Table(name = "Profesores")
 public class Profesores extends Usuarios implements Serializable{
 
-	
+	private static final long serialVersionUID = 1L;
 	@Column(name= "idgrupo")
 	private Integer grupo;
 	private Integer nivel;
@@ -28,8 +25,6 @@ public class Profesores extends Usuarios implements Serializable{
 		this.grupo = grupo;
 		this.nivel = nivel;
 	}
-
-	
 
 	public Integer getNivel() {
 		return nivel;
@@ -50,7 +45,6 @@ public class Profesores extends Usuarios implements Serializable{
 	public String toString() {
 		return "Profesores [nombre = "+ super.getNombre()+ " password = "+super.getPassword() + " grupo=" + grupo + ", nivel=" + nivel + "]";
 	}
-
 
 }
 

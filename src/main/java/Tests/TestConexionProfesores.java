@@ -1,21 +1,17 @@
 package Tests;
 
 import java.util.List;
-
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.Persistence;
-
-import Entities.Estudiantes;
 import Entities.Profesores;
 
-public class TestProfesores {
+public class TestConexionProfesores {
 
 		private static EntityManager manager;
-		
 		private static EntityManagerFactory emf;
 
-		@SuppressWarnings("unchecked")
+	
 		public static void main(String[] args) {
 			emf = Persistence.createEntityManagerFactory("Persistencia");
 			manager = emf.createEntityManager();
@@ -32,5 +28,4 @@ public class TestProfesores {
 				System.out.println(profesores);
 			}
 		}
-
 }

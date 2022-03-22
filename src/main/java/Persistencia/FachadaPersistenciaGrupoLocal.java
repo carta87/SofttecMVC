@@ -1,10 +1,7 @@
-
 package Persistencia;
 
 import java.util.List;
-
 import Entities.Grupo;
-
 
 public interface FachadaPersistenciaGrupoLocal {
 	void create(Grupo grupo);
@@ -13,5 +10,4 @@ public interface FachadaPersistenciaGrupoLocal {
 	List<Grupo > findAll();
 	Grupo findIdByGrupo(String  idGrupo);
 	void remove(Grupo grupo); 
-
 }

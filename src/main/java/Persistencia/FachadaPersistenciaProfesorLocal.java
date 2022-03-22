@@ -1,4 +1,3 @@
-
 package Persistencia;
 
 import java.util.List;
@@ -8,7 +7,7 @@ public interface FachadaPersistenciaProfesorLocal {
 
 	void create(Profesores profesor);
 	void edit(Profesores profesor);
-	void find(Object object); //no implementado
+	void find(Object object); 
 	List<Profesores> findAll();
 	Profesores findByIdProfesor(String idProfesor);
 	void remove(Profesores profesor); 

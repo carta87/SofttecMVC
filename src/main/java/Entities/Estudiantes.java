@@ -1,11 +1,8 @@
 package Entities;
 
 import java.io.Serializable;
-
-
 import javax.persistence.Column;
 import javax.persistence.Entity;
-
 import javax.persistence.Table;
 
 @Entity
@@ -30,8 +27,6 @@ public class Estudiantes extends Usuarios implements Serializable {
 		this.grupo = grupo;
 	}
 
-
-
 	public Integer getCodigo() {
 		return codigo;
 	}
@@ -46,36 +41,10 @@ public class Estudiantes extends Usuarios implements Serializable {
 	}
 
 
-
 	@Override
 	public String toString() {
 		return "Estudiantes [nombre ="+ super.getNombre()+ " password = "+super.getPassword() +" codigo=" + codigo + ", grupo=" + grupo + "]";
 	}
-/*
-	@Override
-	public int hashCode() {
-		return Objects.hash(codigo, grupo, id);
-	}
-
-	@Override
-	public boolean equals(Object obj) {
-		if (this == obj)
-			return true;
-		if (obj == null)
-			return false;
-		if (getClass() != obj.getClass())
-			return false;
-		Estudiantes other = (Estudiantes) obj;
-		return Objects.equals(codigo, other.codigo) && Objects.equals(grupo, other.grupo)
-				&& Objects.equals(id, other.id);
-	}*/
-
-/*
-   public static void main(String[] args) {
-	   Estudiantes estudiantes = new Estudiantes();
-	   estudiantes.setNombre("juliana");
-	 System.out.println(estudiantes.getNombre());
-}*/
 	
-
+	    
 }

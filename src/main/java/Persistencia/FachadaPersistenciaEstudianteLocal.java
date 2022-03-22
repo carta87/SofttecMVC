@@ -1,7 +1,6 @@
 package Persistencia;
 
 import java.util.List;
-
 import Entities.Estudiantes;
 
 public interface FachadaPersistenciaEstudianteLocal {
@@ -12,5 +11,4 @@ public interface FachadaPersistenciaEstudianteLocal {
 	List<Estudiantes> findAll();
 	Estudiantes findByIdEstudiante(String string);
 	void remove(Estudiantes estudiante); 
-
 }

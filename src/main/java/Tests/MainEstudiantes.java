@@ -1,10 +1,8 @@
 package Tests;
 
-import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
 import javax.persistence.EntityManager;
-import javax.persistence.Query;
 import Entities.Estudiantes;
 import Persistencia.FachadaPersistenciaEstudiante;
 
@@ -17,8 +15,6 @@ public class MainEstudiantes {
 		Scanner scanner = new Scanner(System.in);
 		Estudiantes estudiantes;
 
-		//EntityManager entity = JPAUtil.getEntityManagerFactory().createEntityManager();
-		
 		EntityManager entity = FachadaPersistenciaEstudiante.getEntityManagerFactory().createEntityManager();
 		while (opcion!=5) {
 			System.out.println("1. Crear estudiante");
@@ -79,7 +75,6 @@ public class MainEstudiantes {
 			     estudiantes = entity.find(Estudiantes.class, scanner.next());
 				if (estudiantes != null) {  //Encontro
 					
-					
 					scanner.nextLine();
 					
 					System.out.println("Digite el codigo del estudiante:");
@@ -88,9 +83,7 @@ public class MainEstudiantes {
 					System.out.println("Digite el grupo del estudiante:");
 					estudiantes.setGrupo(scanner.nextInt());
 					
-					
 					System.out.println(estudiantes.toString());
-					
 					
 					entity.getTransaction().begin();
 					entity.merge(estudiantes);
@@ -101,7 +94,6 @@ public class MainEstudiantes {
 				} else { //no lo encontro
 					
 					System.out.println("Estudiante no encontrado... Esta es la lista completa de estudiantes");
-					
 					
 					List<Estudiantes> estudiantesRecover= (List<Estudiantes> ) entity.createQuery("FROM Estudiantes").getResultList();
 					for (Estudiantes e : estudiantesRecover) {
@@ -126,7 +118,8 @@ public class MainEstudiantes {
 					System.out.println("estudiante no encontrado...");
 				}
 				break;
-			case 5://entity.close();JPAUtil.shutdown();
+			case 5://entity.close();
+				scanner.close();
 			break;
 
 			default:

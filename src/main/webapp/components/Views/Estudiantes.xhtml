@@ -10,67 +10,50 @@
 	<ui:param name="pageTitle" value="Estudiantes" />
 	<ui:define name="Estudiantes">
 
-
-
-
 		<h:form id="form">
-			<p>Esta es la pagina de estudiantes</p>
-
+		   <h1>
+		    <p>En esta página podrá observar los Datos que  pertenecen a un Estudiantes según varios parámetros</p>
+		   </h1>
 			
 
 			<br />
-			<h:outputText value="#{estudianteBean.listRecover.size()}"
-				rendered="#{estudianteBean.flag}" />
-
 			<br />
 			<h:commandButton value="Ver  Tabla"
 				actionListener="#{estudianteBean.consultarEstudiantes()}" />
-
-			
 			<br />
 
 			<div class="card">
-
 				<p:dataTable value="#{estudianteBean.listRecover}" var="students">
 					rendered="#{estudianteBean.listRecover.size()>0}">
 					
 					<p:column headerText="ID">
 						<h:outputText value="#{students.id}" />
 					</p:column>
-					
 					<p:column headerText="NOMBRE">
 						<h:outputText value="#{students.nombre}" />
 					</p:column>
-					
 					<p:column headerText="PASSWORD">
 						<h:outputText value="#{students.password}" />
 					</p:column>
-					
 					<p:column headerText="CODIGO">
 						<h:outputText value="#{students.codigo}" />
 					</p:column>
-					
 					<p:column headerText="GRUPO">
 						<h:outputText value="#{students.grupo}" />
 					</p:column>
-					
+					<!--Por implementar-->
 					<p:column headerText="Actualizar" rendered="false">
 						<h:commandButton value="Enviar" actionListener="#{estudianteBean.eliminarEstudiante(students)}" />
 					</p:column>
-					
 					<p:column headerText="Buscar" rendered="false">
 						<h:commandButton value="Enviar" actionListener="#{estudianteBean.eliminarEstudiante(students)}" />
 					</p:column>
-	
-			
 					<p:column headerText="Elimanar" rendered="false">
 						<h:commandButton value="Realiazar" actionListener="#{estudianteBean.eliminarEstudiante(students)}" />
 					</p:column>
-	
-	
 				</p:dataTable>
-
 			</div>
+			
 		</h:form>
 	</ui:define>
 </ui:composition>

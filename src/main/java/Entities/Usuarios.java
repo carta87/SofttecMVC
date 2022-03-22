@@ -1,21 +1,17 @@
 package Entities;
 
-
-
 import java.io.Serializable;
-
-import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.Inheritance;
 import javax.persistence.InheritanceType;
-import javax.persistence.MappedSuperclass;
 import javax.persistence.Table;
 
 @Inheritance(strategy = InheritanceType.JOINED)
 @Entity
 @Table(name= "Usuarios")
-public class Usuarios implements Serializable { //  
+public class Usuarios implements Serializable { 
+	
 	@Id
 	private String id;
 	private String nombre;

@@ -1,10 +1,8 @@
 package Tests;
 
-import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
 import javax.persistence.EntityManager;
-import javax.persistence.Query;
 import Entities.Profesores;
 import Persistencia.FachadaPersistenciaEstudiante;
 
@@ -16,9 +14,6 @@ public class MainProfesores {
 		int opcion = 0;
 		Scanner scanner = new Scanner(System.in);
 		Profesores profesores;
-		
-
-		//EntityManager entity = JPAUtil.getEntityManagerFactory().createEntityManager();
 		
 		EntityManager entity = FachadaPersistenciaEstudiante.getEntityManagerFactory().createEntityManager();
 		while (opcion!=5) {
@@ -62,8 +57,7 @@ public class MainProfesores {
 				} else {
 					System.out.println();
 					System.out.println("profesores no encontrado... Esta es la lista completa de profesores");
-					
-					
+						
 					List<Profesores> profesoresRecover= (List<Profesores> ) entity.createQuery("FROM Profesores").getResultList();
 					for (Profesores e : profesoresRecover) {
 						System.out.println(e);
@@ -120,7 +114,8 @@ public class MainProfesores {
 					System.out.println("profesor no encontrado...");
 				}
 				break;
-			case 5://entity.close();JPAUtil.shutdown();
+			case 5://entity.close();
+				scanner.close();
 			break;
 
 			default:
