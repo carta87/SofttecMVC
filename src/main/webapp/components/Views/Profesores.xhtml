@@ -14,12 +14,11 @@
 
 
 
-			<h:outputText value="#{profesorBean.prueba}" />
-
+			
 			<br />
 
 			<br />
-			<h:commandButton value="mostar20"
+			<h:commandButton value="Ver  Tabla"
 				actionListener="#{profesorBean.consultarProfesores()}" />
 			<br />
 			
@@ -49,6 +48,22 @@
 					<p:column headerText="GRUPO">
 						<h:outputText value="#{profesors.grupo}" />
 					</p:column>
+					
+					
+					<p:column headerText="Actualizar" rendered="false">
+						<h:commandButton value="Enviar" actionListener="#{estudianteBean.eliminarEstudiante(students)}" />
+					</p:column>
+					
+					<p:column headerText="Buscar" rendered="false">
+						<h:commandButton value="Enviar" actionListener="#{estudianteBean.eliminarEstudiante(students)}" />
+					</p:column>
+	
+			
+					<p:column headerText="Elimanar" rendered="false">
+						<h:commandButton value="Realiazar" actionListener="#{estudianteBean.eliminarEstudiante(students)}" />
+					</p:column>
+	
+	
 	
 				</p:dataTable>
 

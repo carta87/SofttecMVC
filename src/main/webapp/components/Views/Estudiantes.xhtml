@@ -16,17 +16,17 @@
 		<h:form id="form">
 			<p>Esta es la pagina de estudiantes</p>
 
-			<h:outputText value="#{estudianteBean.prueba}" />
+			
 
 			<br />
 			<h:outputText value="#{estudianteBean.listRecover.size()}"
 				rendered="#{estudianteBean.flag}" />
 
 			<br />
-			<h:commandButton value="mostar14"
+			<h:commandButton value="Ver  Tabla"
 				actionListener="#{estudianteBean.consultarEstudiantes()}" />
 
-			<h:commandButton value="ir a profesor" action="/profesor" />
+			
 			<br />
 
 			<div class="card">
@@ -54,9 +54,19 @@
 						<h:outputText value="#{students.grupo}" />
 					</p:column>
 					
-					<p:column headerText="Update">
-						<h:commandButton value="ir a profesor" actionListener="#{estudianteBean.eliminarEstudiante(students)}" />
+					<p:column headerText="Actualizar" rendered="false">
+						<h:commandButton value="Enviar" actionListener="#{estudianteBean.eliminarEstudiante(students)}" />
 					</p:column>
+					
+					<p:column headerText="Buscar" rendered="false">
+						<h:commandButton value="Enviar" actionListener="#{estudianteBean.eliminarEstudiante(students)}" />
+					</p:column>
+	
+			
+					<p:column headerText="Elimanar" rendered="false">
+						<h:commandButton value="Realiazar" actionListener="#{estudianteBean.eliminarEstudiante(students)}" />
+					</p:column>
+	
 	
 				</p:dataTable>
 
